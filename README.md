@@ -18,12 +18,15 @@ The Browser Company announced on **[arc.net](https://arc.net/)** (*"A farewell t
   - **Arc on macOS and Windows stops working completely** (you will no longer be able to sign in or use the app).
   - All Arc accounts are deactivated and personal account data is deleted within 30 days.
   - `Arc Search` on Android is removed from the Google Play Store and deprecated on installed devices.
-- **Why migrate via `StorableSidebar.json`?** Arc's built-in export (`Arc > Settings > Advanced > Export Data`) only saves a flat list of links, losing your **Spaces, nested folder hierarchies, theme colors/icons, Pinned vs. Unpinned split, and per-profile Favorites (Essentials)**. Reading `StorableSidebar.json` preserves the entire sidebar structure natively inside Zen Browser.
+- **Why migrate via `StorableSidebar.json` to Zen?**
+  1. **Intel Mac (`x86_64`) Support**: Unlike Arc, **Dia requires Apple Silicon (`M1` or later)** and has **no Intel Mac version**. For Intel Mac users (or anyone preferring an open-source Firefox/Gecko engine), Zen Browser (`x86_64` & `arm64`) is the closest Arc alternative.
+  2. **Full Structure Preservation**: Arc's built-in export (`Arc > Settings > Advanced > Export Data`) only saves a flat list of links, losing your **Spaces, nested folder hierarchies, theme colors/icons, Pinned vs. Unpinned split, and per-profile Favorites (Essentials)**. Reading `StorableSidebar.json` preserves the entire sidebar structure natively inside Zen Browser.
 
 ### Migrating to Dia vs. Zen Browser
 
 | Feature / Requirement | [Dia Browser](https://diabrowser.com) (Official Successor) | [Zen Browser](https://zen-browser.app) (Open-Source Firefox/Gecko) |
 |---|---|---|
+| **macOS Hardware Support** | **Apple Silicon (`arm64`) only** — *no Intel Mac support* | **Both Intel (`x86_64`) and Apple Silicon (`arm64`)** (plus Linux & Windows) |
 | **Engine** | Chromium (same team as Arc) | Firefox / Gecko |
 | **Needs a script?** | **No** — built-in 1-click native importer | **Yes** — requires `arc_to_zen.py` |
 | **How to import** | Select **Arc** during setup, or **Dia > Import from Another Browser** in the macOS menu bar | Run the 3-step `arc_to_zen.py` workflow below |
