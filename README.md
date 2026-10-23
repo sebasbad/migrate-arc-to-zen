@@ -18,7 +18,19 @@ The Browser Company announced on **[arc.net](https://arc.net/)** (*"A farewell t
   - **Arc on macOS and Windows stops working completely** (you will no longer be able to sign in or use the app).
   - All Arc accounts are deactivated and personal account data is deleted within 30 days.
   - `Arc Search` on Android is removed from the Google Play Store and deprecated on installed devices.
-- **Why migrate via `StorableSidebar.json`?** Arc's built-in export only saves a flat list of links, losing your **Spaces, nested folder hierarchies, theme colors/icons, Pinned vs. Unpinned split, and per-profile Favorites (Essentials)**. Reading `StorableSidebar.json` preserves the entire sidebar structure natively inside Zen Browser.
+- **Why migrate via `StorableSidebar.json`?** Arc's built-in export (`Arc > Settings > Advanced > Export Data`) only saves a flat list of links, losing your **Spaces, nested folder hierarchies, theme colors/icons, Pinned vs. Unpinned split, and per-profile Favorites (Essentials)**. Reading `StorableSidebar.json` preserves the entire sidebar structure natively inside Zen Browser.
+
+### Migrating to Dia vs. Zen Browser
+
+| Feature / Requirement | [Dia Browser](https://diabrowser.com) (Official Successor) | [Zen Browser](https://zen-browser.app) (Open-Source Firefox/Gecko) |
+|---|---|---|
+| **Engine** | Chromium (same team as Arc) | Firefox / Gecko |
+| **Needs a script?** | **No** — built-in 1-click native importer | **Yes** — requires `arc_to_zen.py` |
+| **How to import** | Select **Arc** during setup, or **Dia > Import from Another Browser** in the macOS menu bar | Run the 3-step `arc_to_zen.py` workflow below |
+| **Spaces & Profiles** | Imported natively as Dia **Profiles** | Imported as Zen **Workspaces** + **Containers** (`containerTabId`) |
+| **Pinned Tabs & Folders** | Imported natively (Folders $\rightarrow$ **Tab Groups**) | Imported natively into `zen-sessions.jsonlz4` (`folders[]` + `groups[]`) |
+| **Favorites / Essentials** | Imported natively | Imported via `--add-essentials` (`zenEssential: true`) |
+| **Passwords, History & Extensions** | Imported automatically in the same step | Import passwords/bookmarks/history via **Zen Settings > Import Browser Data**, then run `arc_to_zen.py` for Spaces/Folders/Tabs |
 
 ---
 
