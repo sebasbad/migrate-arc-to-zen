@@ -28,6 +28,7 @@ The Browser Company announced on **[arc.net](https://arc.net/)** (*"A farewell t
 |------|---------|
 | `arc_to_zen.py` | Direct binary session migrator (`StorableSidebar.json` $\rightarrow$ `zen-sessions.jsonlz4`). Migrates Spaces, themes, icons, nested folders, pinned/unpinned tabs, Essentials, and maps Arc Profiles to Zen Containers. |
 | `arc_export.py` | Standalone fallback exporter. Reads `StorableSidebar.json` and writes one standard Netscape Bookmark HTML file (`01_<Space>.html`, etc.) per Arc Space into `./arc-export/`. |
+| `LICENSE` | MIT License (permissive use + no-warranty disclaimer). |
 
 ---
 
@@ -75,8 +76,7 @@ flowchart LR
    - In Arc, multiple profiles share a single sidebar with per-Space cookie/storage isolation and per-profile Favorites bars.
    - In Zen, this is replicated inside a single Zen profile using **Container Workspaces** (`containerTabId` on the workspace + `userContextId` on tabs/essentials):
      - Arc `default` profile $\rightarrow$ `userContextId = 0` (Default / No Container)
-     - Arc `Profile 2` $\rightarrow$ `userContextId = 2` (Zen's built-in **Work** container)
-     - Arc `Profile 4` $\rightarrow$ `userContextId = 1` (Zen's built-in **Personal** container)
+     - Non-default Arc profiles (`Profile 1`, `Profile 2`, `Profile 4`, etc.) $\rightarrow$ automatically assigned distinct Zen Container IDs (`userContextId = 1, 2, 3, ...`)
    - Enabling `zen.workspaces.separate-essentials` and `zen.workspaces.container-specific-essentials-enabled` in `prefs.js` scopes Essentials to their matching container workspace automatically.
 
 ---

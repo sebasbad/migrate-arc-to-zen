@@ -39,8 +39,11 @@ ARC_PROFILE_TO_CTX = {"Profile 2": 2, "Profile 4": 1}
 def arc_ctx(prof_obj):
     if not isinstance(prof_obj, dict) or "default" in prof_obj:
         return 0
-    base = ((prof_obj.get("custom") or {}).get("_0") or {}).get("directoryBasename")
-    return ARC_PROFILE_TO_CTX.get(base, 0)
+    base = ((prof_obj.get("custom") or {}).get("_0") or {}).get("directoryBasename") or "custom"
+    if base not in ARC_PROFILE_TO_CTX:
+        used = set(ARC_PROFILE_TO_CTX.values())
+        ARC_PROFILE_TO_CTX[base] = next(i for i in range(1, 100) if i not in used)
+    return ARC_PROFILE_TO_CTX[base]
 
 
 def space_icon(space):
