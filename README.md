@@ -6,6 +6,22 @@ Zero-dependency (except `lz4`) Python toolkit to migrate **Arc Browser** Spaces,
 
 ---
 
+## Why This Exists: Arc Sunsetting Announcement ([arc.net](https://arc.net/))
+
+The Browser Company announced on **[arc.net](https://arc.net/)** (*"A farewell to Arc"*) that **Arc is shutting down permanently on December 22, 2026** as engineering and security focus shifts exclusively to their new browser, [Dia](https://diabrowser.com).
+
+### TL;DR of the [arc.net](https://arc.net/) Farewell Page (Archived Summary)
+
+- **October 22, 2026**: New Arc account creation disabled. Existing members can still use Arc and export data (`Arc > Settings > Advanced > Export Data`).
+- **November 23, 2026**: On iOS and Android (`Arc Search`), *Browse for Me*, AI features, account sign-in, and tab sync are disabled.
+- **December 22, 2026 (Hard Cutoff)**:
+  - **Arc on macOS and Windows stops working completely** (you will no longer be able to sign in or use the app).
+  - All Arc accounts are deactivated and personal account data is deleted within 30 days.
+  - `Arc Search` on Android is removed from the Google Play Store and deprecated on installed devices.
+- **Why migrate via `StorableSidebar.json`?** Arc's built-in export only saves a flat list of links, losing your **Spaces, nested folder hierarchies, theme colors/icons, Pinned vs. Unpinned split, and per-profile Favorites (Essentials)**. Reading `StorableSidebar.json` preserves the entire sidebar structure natively inside Zen Browser.
+
+---
+
 ## Repository Contents
 
 | File | Purpose |
