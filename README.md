@@ -37,6 +37,20 @@ The Browser Company announced on **[arc.net](https://arc.net/)** (*"A farewell t
 
 ---
 
+## Community Tools & Alternatives
+
+If you are evaluating Arc $\rightarrow$ Zen migration utilities, several open-source community tools approach data transfer differently. Choose the option best aligned with your needs:
+
+| Project | Interface | Core Capabilities | Best For |
+|---|---|---|---|
+| **[migrate-arc-to-zen](https://github.com/sebasbad/migrate-arc-to-zen)** *(This repo)* | Single-file Python script ([`arc_to_zen.py`](file:///Users/sebastian.badea/sandbox/ai/migrate-arc-to-zen/arc_to_zen.py)) | Direct `zen-sessions.jsonlz4` binary writer (`mozLz4`), Arc Spaces $\rightarrow$ Zen Workspaces, nested folder trees $\rightarrow$ Zen groups + `zenIsEmpty` placeholder tabs, multi-profile isolation $\rightarrow$ Zen Containers (`userContextId` + `containerTabId`), theme RGB gradient conversion, SF/SVG icon mapping, and automated backups. Zero SQLite dependencies or locks. | Users wanting a lightweight, transparent, audit-friendly single script with zero database lock risks or GUI dependencies. |
+| **[MohamedRF/arc_to_zen](https://github.com/MohamedRF/arc_to_zen)** | Native macOS Desktop App (`.app` / DMG) & CLI | Guided visual GUI, spaces, nested folders, Essentials, browsing history migration, compatible cookie transfer, and transactional staging engine. | Users who prefer a guided macOS desktop GUI or want browsing history and cookies transferred alongside tabs. |
+| **[rafcabezas/arc2zen](https://github.com/rafcabezas/arc2zen)** | Multi-script Python CLI pipeline | Arc Spaces $\rightarrow$ Zen Workspaces, pinned tabs, Essentials, emoji icon mapping, and interactive workspace UUID mapping (`workspace_uuid_mapping.json`). | Users looking for an established interactive CLI tool or manual workspace mapping workflows. |
+| **[ivnvxd/arc-export](https://github.com/ivnvxd/arc-export)** | Python CLI | Extracts Arc spaces and pinned tabs into standard Netscape Bookmark HTML and JSON formats. | Users needing raw, portable bookmark files to import manually into any browser. |
+| **[mhadifilms/arc-exporter](https://github.com/mhadifilms/arc-exporter)** | Node / Python CLI | Extracts browsing history, saved credentials, and profile metadata across multiple browser targets. | Broader browser profile extraction. |
+
+---
+
 ## Repository Contents
 
 | File | Purpose |
